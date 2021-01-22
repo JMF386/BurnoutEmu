@@ -30,6 +30,11 @@ namespace BreakinIn
                 { "addr", typeof(Addr) }, //the client tells us their IP and port (ephemeral). The IP is usually wrong.
 
                 { "chal", typeof(Chal) }, //enter challenge mode
+                
+                //burnout
+                //{ "dir", typeof(DirIn)  },
+                { "uatr", typeof(UatrIn)  },
+                //{ "sviw", typeof(SviwIn)  },
 
                 //need for speed
                 { "glea", null }, //leave game (string NAME)

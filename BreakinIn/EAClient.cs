@@ -15,7 +15,7 @@ namespace BreakinIn
     {
         public AbstractEAServer Context;
         public User User;
-        public string IP = "127.0.0.1";
+        public string IP = "192.168.0.228";
         public string Port = null;
         public int SessionID;
 

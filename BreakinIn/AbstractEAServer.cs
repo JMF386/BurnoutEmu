@@ -20,7 +20,7 @@ namespace BreakinIn
 
         public AbstractEAServer(ushort port)
         {
-            IPAddress localAddr = IPAddress.Parse("0.0.0.0");
+            IPAddress localAddr = IPAddress.Parse("192.168.0.228");
             Listener = new TcpListener(localAddr, port);
             Listener.Start();
 

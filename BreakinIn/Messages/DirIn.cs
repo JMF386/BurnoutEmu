@@ -10,8 +10,10 @@ namespace BreakinIn.Messages
 
         public string PROD { get; set; }
         public string VERS { get; set; }
+        public string SKU { get; set; }
         public string FROM { get; set; }
         public string LANG { get; set; }
+        public string MID { get; set; }
         public string SLUS { get; set; }
         public string REGN { get; set; }
         public string CLST { get; set; }

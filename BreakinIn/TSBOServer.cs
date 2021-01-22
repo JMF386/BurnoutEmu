@@ -11,13 +11,14 @@ namespace BreakinIn
 
         public bool Run(string addr)
         {
-            Console.WriteLine("Breakin' In... ("+addr+")");
+            Console.WriteLine("Burnout Server Emulator v0.1 by VTSTech ("+addr+")");
 
             Console.WriteLine("=== Listeners ===");
 
             try
             {
-                Redirector = new RedirectorServer(11100, addr, 10901);
+                //Redirector = new RedirectorServer(11100, addr, 10901);
+                Redirector = new RedirectorServer(21840, addr, 10901);
                 Console.WriteLine("Redirector: OK!");
             }
             catch (Exception e)

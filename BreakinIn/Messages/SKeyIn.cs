@@ -13,6 +13,8 @@ namespace BreakinIn.Messages
         {
             //TODO: get actual session key
             client.SendMessage(new SKeyOut());
+            client.SendMessage(new SKeyOut());
+            client.SendMessage(new NewsOut());
         }
     }
 }

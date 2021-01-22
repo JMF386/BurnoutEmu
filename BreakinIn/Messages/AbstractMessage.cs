@@ -15,7 +15,7 @@ namespace BreakinIn.Messages
             input = input.TrimEnd('\0');
             if (input.Length < 8) return;
             var type = this.GetType();
-
+            Console.WriteLine("Recv Message Type: "+type);
             var hasN = input.IndexOf('\n') > 0;
             string[] pairs;
             if (hasN) pairs = input.Split('\n');
@@ -42,6 +42,7 @@ namespace BreakinIn.Messages
                 else
                 {
                     prop.SetValue(this, value);
+                    Console.WriteLine("Value Set: "+ pair);
                 }
             }
         }
@@ -76,6 +77,7 @@ namespace BreakinIn.Messages
 
         private string EncodeKV(string key, string value)
         {
+            //Console.WriteLine("Key: " + key + " Value: " + value);
             return key + "=" + value + '\n';
         }
 
