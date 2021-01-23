@@ -13,28 +13,27 @@ namespace BreakinIn
         public override Dictionary<string, Type> NameToClass { get; } =
             new Dictionary<string, Type>()
             {
-                { "move", typeof(MoveIn) }, //move into a room. remove last room and broadcast "+rom" to others. broadcast "+pop" with Z=ID/Count for population update
-                { "mesg", typeof(Mesg) }, //PRIV is non-null for private. else broadcast to room. PRIV->(find client), TEXT->T, ATTR->EP, (name)->N
-                { "room", null }, //create room. NAME=name, return (room, +who, +msg, +rom to all, +usr)
-                { "auxi", typeof(Auxi) }, //auxiliary information. returned as X attribute in +usr and +who
-                { "auth", typeof(AuthIn) },
-                { "acct", typeof(AcctIn) },
                 { "~png", typeof(Ping) },
+                { "acct", typeof(AcctIn) },
+                { "addr", typeof(Addr) }, //the client tells us their IP and port (ephemeral). The IP is usually wrong.
+                { "auth", typeof(AuthIn) },
+                { "auxi", typeof(Auxi) }, //auxiliary information. returned as X attribute in +usr and +who
+                { "chal", typeof(Chal) }, //enter challenge mode
                 { "cper", typeof(CperIn) }, //create persona. (NAME) in, (PERS, NAME) out. where name is username.
                 { "dper", typeof(DperIn) }, //delete persona
+                { "mesg", typeof(Mesg) }, //PRIV is non-null for private. else broadcast to room. PRIV->(find client), TEXT->T, ATTR->EP, (name)->N
+                { "move", typeof(MoveIn) }, //move into a room. remove last room and broadcast "+rom" to others. broadcast "+pop" with Z=ID/Count for population update
+                { "onln", typeof(OnlnIn) }, //search for a user's info
                 { "pers", typeof(PersIn) }, //select persona
+                { "room", null }, //create room. NAME=name, return (room, +who, +msg, +rom to all, +usr)
                 { "skey", typeof(SKeyIn) }, //session key?
                 { "sele", typeof(SeleIn) }, //gets info for the current server
-                { "user", typeof(UserIn) }, //get my user info
-                { "onln", typeof(OnlnIn) }, //search for a user's info
-                { "addr", typeof(Addr) }, //the client tells us their IP and port (ephemeral). The IP is usually wrong.
-
-                { "chal", typeof(Chal) }, //enter challenge mode
+                { "user", typeof(UserIn) }, //get my user info            
                 
                 //burnout
                 //{ "dir", typeof(DirIn)  },
                 { "uatr", typeof(UatrIn)  },
-                //{ "sviw", typeof(SviwIn)  },
+                { "sviw", typeof(SviwIn)  },
 
                 //need for speed
                 { "glea", null }, //leave game (string NAME)
@@ -62,11 +61,11 @@ namespace BreakinIn
             PingThread = new Thread(PingLoop);
             PingThread.Start();
 
-            Rooms.AddRoom(new Room() { Name = "Veronaville", IsGlobal = true });
-            Rooms.AddRoom(new Room() { Name = "Strangetown", IsGlobal = true });
-            Rooms.AddRoom(new Room() { Name = "Pleasantview", IsGlobal = true });
-            Rooms.AddRoom(new Room() { Name = "Belladonna Cove", IsGlobal = true });
-            Rooms.AddRoom(new Room() { Name = "Riverblossom Hills", IsGlobal = true });
+            Rooms.AddRoom(new Room() { Name = "Room-1", IsGlobal = true });
+            Rooms.AddRoom(new Room() { Name = "Room-2", IsGlobal = true });
+            Rooms.AddRoom(new Room() { Name = "Room-3", IsGlobal = true });
+            //Rooms.AddRoom(new Room() { Name = "Room-4", IsGlobal = true });
+            //Rooms.AddRoom(new Room() { Name = "Room-5", IsGlobal = true });
         }
 
         public void PingLoop()

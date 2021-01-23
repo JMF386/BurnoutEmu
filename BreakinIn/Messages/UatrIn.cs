@@ -13,12 +13,7 @@ namespace BreakinIn.Messages
         
         public override void Process(AbstractEAServer context, EAClient client)
         {
-            //var response = new UatrOut();
-            //var rc = context as RedirectorServer;
-            //if (rc == null) return;
             client.SendMessage(new UatrOut());
-
-
         }
     }
 }

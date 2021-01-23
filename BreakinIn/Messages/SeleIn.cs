@@ -8,7 +8,12 @@ namespace BreakinIn.Messages
     {
         public override string _Name { get => "sele"; }
 
-        public string ROOMS { get; set; } = "1";
+        public string MYGAME { get; set; }
+        public string ROOMS { get; set; }
+        public string USERS { get; set; }
+        public string MESGS { get; set; }
+        public string STATS { get; set; }
+        public string RANKS { get; set; }
 
         public override void Process(AbstractEAServer context, EAClient client)
         {

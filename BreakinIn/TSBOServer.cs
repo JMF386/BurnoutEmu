@@ -18,7 +18,11 @@ namespace BreakinIn
             try
             {
                 //Redirector = new RedirectorServer(11100, addr, 10901);
-                Redirector = new RedirectorServer(21840, addr, 10901);
+                Redirector = new RedirectorServer(21840, addr, 10901); //Burnout 3 PAL Review
+                //Redirector = new RedirectorServer(21801, addr, 10901); //Burnout 3 NTSC Retail
+                //Redirector = new RedirectorServer(21800, addr, 10901); //Burnout 3 PAL Retail
+                //Redirector = new RedirectorServer(21870, addr, 10901); //Burnout Paradise
+                //Redirector = new RedirectorServer(10900, addr, 10901); //Need for Speed Underground
                 Console.WriteLine("Redirector: OK!");
             }
             catch (Exception e)

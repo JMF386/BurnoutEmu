@@ -11,10 +11,10 @@ namespace BreakinIn.Messages
 
         public override void Process(AbstractEAServer context, EAClient client)
         {
-            //TODO: get actual session key
-            client.SendMessage(new SKeyOut());
-            client.SendMessage(new SKeyOut());
+			//TODO: get actual session key
+			client.SendMessage(new SKeyOut());
             client.SendMessage(new NewsOut());
+            client.SendMessage(new SKeyOut());
         }
     }
 }

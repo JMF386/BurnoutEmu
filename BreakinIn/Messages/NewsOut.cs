@@ -8,6 +8,6 @@ namespace BreakinIn.Messages
     {
         public override string _Name { get => "newsnew0"; }
 
-        public string NEWS { get; set; } = "VTSTECH.WAS.HERE";
+        public string NEWS { get; set; } = "VTSTECH.WAS.HERE\n";
     }
 }
